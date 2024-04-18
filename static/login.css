@@ -1,0 +1,92 @@
+body {
+    background-image: url('/static/remintong.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.login-title {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-submit {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.forgot-links {
+    margin-top: 10px;
+}
+
+.forgot-links a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.forgot-links a:hover {
+    text-decoration: underline;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}

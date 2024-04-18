@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css">
+    <style>
+        #calendar-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="calendar-container">
+    <h1>Calendario</h1>
+    <div id="calendar"></div>
+    <textarea id="note" placeholder="Agregar nota..." rows="3" cols="40"></textarea><br>
+    <button id="add-note-btn">Agregar Nota</button>
+    <div id="notes-container">
+        <h2>Notas</h2>
+        <ul id="notes-list"></ul>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        flatpickr("#calendar", {
+            enableTime: false,
+            dateFormat: "d/m/Y",
+            onChange: function (selectedDates, dateStr) {
+                document.getElementById("note").value = "";
+            }
+        });
+
+        document.getElementById("add-note-btn").addEventListener("click", function () {
+            var calendar = document.getElementById("calendar")._flatpickr;
+            var dateStr = calendar.selectedDates[0].toLocaleDateString("es-ES");
+            var note = document.getElementById("note").value.trim();
+            if (note !== "") {
+                var listItem = document.createElement("li");
+                listItem.textContent = dateStr + ": " + note;
+                document.getElementById("notes-list").appendChild(listItem);
+            } else {
+                alert("Por favor ingresa una nota.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
